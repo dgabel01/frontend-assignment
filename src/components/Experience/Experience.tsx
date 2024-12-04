@@ -10,7 +10,7 @@ import relaxPhoto from "@/assets/images/Copy of SWC 2019 Week 26-60.png";
 
 const Experience = () => {
   const reviewIcons = [trustpilotIcon, facebookIcon, googleIcon];
-  const cardPhotos = [sailPhoto, partyPhoto, explorePhoto, relaxPhoto];
+  //const cardPhotos = [sailPhoto, partyPhoto, explorePhoto, relaxPhoto];
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center py-16 bg-[#06283D]">
