@@ -39,6 +39,9 @@ export function Navbar() {
         variant="text"
         className="text-white lg:hidden"
         onClick={() => setOpenNav(!openNav)}
+        placeholder=""
+        onPointerEnterCapture={() => {}}
+        onPointerLeaveCapture={() => {}}
       >
         {openNav ? (
           <XMarkIcon className="h-6 w-6 text-white" />
@@ -63,36 +66,35 @@ export function Navbar() {
 
       {/* Buttons */}
       <div className="hidden lg:flex items-center gap-4">
-        <Button
-          variant="text"
+        <button
+          
           className="text-white text-base font-medium hover:text-gray-300 transition-colors"
         >
           Log in
-        </Button>
-        <Button
-          variant="filled"
+        </button>
+        <button
+         
           className="bg-[#ffd50a] text-black text-base font-medium px-4 py-2 uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
         >
           Book now
-        </Button>
+        </button>
       </div>
 
       {/* Mobile Navigation */}
       {openNav && (
         <div className="absolute top-12 left-4 bg-transparent flex flex-col gap-4">
           {navList}
-          <Button
-            variant="text"
+          <button
+            
             className="text-white text-base font-medium hover:text-gray-300 transition-colors"
           >
             Log in
-          </Button>
-          <Button
-            variant="filled"
+          </button>
+          <button
             className="bg-[#ffd50a] text-black text-base font-medium px-4 py-2 uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
           >
             Book now
-          </Button>
+          </button>
         </div>
       )}
     </div>
