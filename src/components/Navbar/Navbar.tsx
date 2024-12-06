@@ -33,7 +33,6 @@ export function Navbar() {
 
   return (
     <div className="absolute top-0 left-0 z-10 w-full flex items-center justify-between px-4 lg:px-8 mt-12">
-      {/* Mobile Menu Icon */}
       <button
         className="text-white lg:hidden"
         onClick={() => setOpenNav(!openNav)}
@@ -45,7 +44,6 @@ export function Navbar() {
         )}
       </button>
 
-      {/* Logo */}
       <Link href="/" className="hidden lg:flex items-center">
         <Image
           src={navbarLogo}
@@ -56,10 +54,8 @@ export function Navbar() {
         />
       </Link>
 
-      {/* Navigation Links */}
       <div className="hidden lg:flex items-center space-x-6">{navList}</div>
 
-      {/* Buttons */}
       <div className="hidden lg:flex items-center gap-4">
         <button className="text-white text-base font-bold hover:text-gray-300 transition-colors mr-[15px]">
           Log in

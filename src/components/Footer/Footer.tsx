@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import logoIcon from "@/assets/images/Charterag.png";
 import scrollToTopIcon from "@/assets/icons/scroll.png";
@@ -28,7 +28,9 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row gap-8 justify-between items-start mb-8 mt-[90px]">
         <div className="grid grid-cols-2 md:flex md:justify-between md:gap-16 w-full md:w-auto">
           <div className="flex flex-col">
-            <h1 className="font-medium text-white text-[14px] mb-4">Programs</h1>
+            <h1 className="font-medium text-white text-[14px] mb-4">
+              Programs
+            </h1>
             <ul className="space-y-2 text-white opacity-60">
               <li>Program 1</li>
               <li>Program 2</li>
@@ -38,7 +40,9 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col">
-            <h1 className="font-medium text-white text-[14px] mb-4">Find out more</h1>
+            <h1 className="font-medium text-white text-[14px] mb-4">
+              Find out more
+            </h1>
             <ul className="space-y-2 text-white opacity-60">
               <li>Link 1</li>
               <li>Link 2</li>
@@ -86,20 +90,18 @@ const Footer = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-white text-sm opacity-70 space-y-4 md:space-y-0">
         <div className="flex flex-col space-y-2">
-            <p>Copyright © {new Date().getFullYear()} Charterag Ltd. (company no.08245801)</p>
-            <p>Lorem ipsum dolor sit amet lorem ipsum ipsum, United Kingdom</p>
+          <p>
+            Copyright © {new Date().getFullYear()} Charterag Ltd. (company
+            no.08245801)
+          </p>
+          <p>Lorem ipsum dolor sit amet lorem ipsum ipsum, United Kingdom</p>
         </div>
 
         <div className="flex space-x-6">
-            <p>
-                Legal info
-            </p>
-            <p>
-                Terms and conditions
-            </p>
+          <p>Legal info</p>
+          <p>Terms and conditions</p>
         </div>
-    </div>
-
+      </div>
     </footer>
   );
 };

@@ -39,7 +39,9 @@ export function Carousel() {
           <div
             key={index}
             className={`absolute inset-0 transition-transform duration-700  h-[337px] pl-[30px] pr-[76px] py-[42px] bg-white rounded-[10px] ${
-              activeIndex === index ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+              activeIndex === index
+                ? "translate-x-0 opacity-100"
+                : "translate-x-full opacity-0"
             }`}
             style={{
               transform: `translateX(${(index - activeIndex) * 100}%)`,
@@ -54,7 +56,9 @@ export function Carousel() {
                 height={80}
                 className="rounded-full"
               />
-              <span className="text-gray-800 text-lg font-semibold">{slide.name}</span>
+              <span className="text-gray-800 text-lg font-semibold">
+                {slide.name}
+              </span>
               <div className="flex gap-1">
                 {[...Array(slide.stars)].map((_, starIndex) => (
                   <Image

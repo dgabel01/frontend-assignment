@@ -9,7 +9,13 @@ interface SinglePartyProps {
   adventure: number;
 }
 
-const SingleParty = ({ title, price, img, party, adventure }: SinglePartyProps) => {
+const SingleParty = ({
+  title,
+  price,
+  img,
+  party,
+  adventure,
+}: SinglePartyProps) => {
   return (
     <div className="w-full max-w-[1103px] h-[404px] sm:h-[450px] relative rounded-[15px] overflow-hidden">
       <Image

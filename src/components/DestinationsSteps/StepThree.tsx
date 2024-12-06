@@ -71,14 +71,20 @@ const StepThree = () => {
             Ready to go?
           </h2>
           <p className="text-[#062949] text-lg font-normal font-['DM Sans'] leading-[25.20px]">
-            Lorem ipsum dolor sit amet consectetur. Tellus lectus non purus odio amet fermentum eu morbi id. Risus sed facilisis maecenas urna nunc.
+            Lorem ipsum dolor sit amet consectetur. Tellus lectus non purus odio
+            amet fermentum eu morbi id. Risus sed facilisis maecenas urna nunc.
           </p>
           <button className="w-[264px] h-11 pl-[18px] pr-3 py-2 bg-white rounded-[50px] flex justify-between items-center gap-3 shadow-md hover:shadow-lg transition-all mt-[43px]">
             <span className="text-[#062949] text-base font-medium font-['Poppins'] leading-normal">
               Explore our destinations
             </span>
             <div className="w-[29px] h-[29px] bg-[#2962d0]/10 rounded-full flex justify-center items-center">
-              <Image src={rightArrowIcon} alt="Right Arrow Icon" width={16} height={16} />
+              <Image
+                src={rightArrowIcon}
+                alt="Right Arrow Icon"
+                width={16}
+                height={16}
+              />
             </div>
           </button>
         </div>

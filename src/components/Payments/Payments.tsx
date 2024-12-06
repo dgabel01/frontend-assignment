@@ -110,7 +110,6 @@ const Payments = () => {
         </div>
       </div>
 
-      {/* Flexible payment section */}
       <div
         className="h-auto bg-[#062949] bg-cover bg-center flex justify-center items-center px-4 py-16"
         style={{
@@ -140,29 +139,36 @@ const Payments = () => {
             trip. For bookings made within 95 days before the trip, see our{" "}
             <Link href="" className="text-[#1dc072] underline">
               Terms and conditions
-            </Link>.
+            </Link>
+            .
           </div>
         </div>
       </div>
 
       {/* Rotated images */}
-      <div className="w-[747.10px] h-[1000px] relative mt-[129px] mx-auto">
-        <Image
-          alt="left-rotated-image"
-          className="w-[233.20px] h-[349.96px] absolute top-[50px] left-[30px] origin-top-left rotate-[-10deg] rounded-[10px] shadow z-0"
-          src={leftImage}
-        />
-        <Image
-          alt="right-rotated-image"
-          className="w-[262.92px] h-[273.43px] absolute top-[100px] left-[500px] origin-top-left rotate-[5deg] rounded-[10px] shadow z-0"
-          src={rightImage}
-        />
-        <Image
-          alt="center-rotated-image"
-          className="w-[412.19px] h-[274.96px] absolute top-[200px] left-[170px] rounded-[10px] shadow z-10"
-          src={centerImage}
-        />
-        <div className="w-[464px] h-auto absolute top-[550px] left-[50%] transform -translate-x-1/2 flex flex-col items-center gap-6 text-center z-20">
+      <div className="relative mt-[129px] mx-auto flex flex-col md:w-[747.10px] md:h-[1000px] md:flex-row md:justify-center md:gap-[30px] md:items-center">
+        <div className="w-[233.20px] h-[349.96px] relative mx-auto mb-6 md:mb-0 md:absolute md:top-[50px] md:left-[30px] md:origin-top-left md:rotate-[-10deg] md:rounded-[10px] md:shadow md:z-0">
+          <Image
+            alt="left-rotated-image"
+            src={leftImage}
+            className="rounded-[10px] shadow"
+          />
+        </div>
+        <div className="max-w-[262.92px] h-[273.43px] relative mx-auto mb-6 md:mb-0 md:absolute md:top-[100px] md:left-[500px] md:origin-top-left md:rotate-[5deg] md:rounded-[10px] md:shadow md:z-0">
+          <Image
+            alt="right-rotated-image"
+            src={rightImage}
+            className="rounded-[10px] shadow"
+          />
+        </div>
+        <div className="max-w-[412.19px] h-[274.96px] relative mx-auto md:absolute md:top-[200px] md:left-[170px] md:rounded-[10px] md:shadow md:z-10">
+          <Image
+            alt="center-rotated-image"
+            src={centerImage}
+            className="rounded-[10px] shadow"
+          />
+        </div>
+        <div className="w-[464px] h-auto relative mx-auto mt-6 md:mt-0 md:absolute md:top-[550px] md:left-[50%] md:transform md:-translate-x-1/2 flex flex-col items-center gap-6 text-center z-20">
           <div className="text-[#062949] text-[32px] font-semibold leading-10">
             Check Charterag
             <br />

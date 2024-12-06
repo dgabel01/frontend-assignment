@@ -6,7 +6,7 @@ interface PaymentCardProps {
   text: string;
   percentage: string;
   progress: string;
-  bgColor: string; // Tailwind CSS class for background color
+  bgColor: string;
 }
 
 const PaymentCard = ({
@@ -17,7 +17,9 @@ const PaymentCard = ({
   bgColor,
 }: PaymentCardProps) => {
   return (
-    <div className={`flex flex-col items-start p-4 ${bgColor} rounded-md shadow-md w-full max-w-[300px] mx-auto`}>
+    <div
+      className={`flex flex-col items-start p-4 ${bgColor} rounded-md shadow-md w-full max-w-[300px] mx-auto`}
+    >
       <div className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#E8F9F1]">
         <Image
           src={dollarIcon}
