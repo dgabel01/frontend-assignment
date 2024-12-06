@@ -16,7 +16,7 @@ const Reviews = () => {
           alt="Guests enjoying"
           objectFit="cover"
           quality={100}
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-end p-4 sm:p-8 lg:p-16">
           <div className="flex flex-col md:items-end gap-4 md:gap-6 lg:gap-8">

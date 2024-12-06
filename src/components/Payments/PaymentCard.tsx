@@ -1,0 +1,46 @@
+import Image from "next/image";
+import dollarIcon from "@/assets/icons/dollarIcon.png";
+
+interface PaymentCardProps {
+  number: number;
+  text: string;
+  percentage: string;
+  progress: string;
+  bgColor: string; // Tailwind CSS class for background color
+}
+
+const PaymentCard = ({
+  number,
+  text,
+  percentage,
+  progress,
+  bgColor,
+}: PaymentCardProps) => {
+  return (
+    <div className={`flex flex-col items-start p-4 ${bgColor} rounded-md shadow-md w-full max-w-[300px] mx-auto`}>
+      <div className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#E8F9F1]">
+        <Image
+          src={dollarIcon}
+          alt="Dollar Icon"
+          className="absolute inset-0 w-6 h-6 m-4"
+        />
+        <div className="relative z-20 text-[#1dc072] text-xs font-bold font-['Poppins']">
+          {number}
+        </div>
+      </div>
+      <div className="mt-4 text-[#4a4e4c] text-2xl font-semibold font-['Poppins'] leading-loose">
+        {percentage}
+      </div>
+      <div className="mt-2 text-[#656565] text-[15px] font-normal font-['Poppins'] leading-normal text-center">
+        {text}
+      </div>
+      <div className="w-full h-2 bg-[#f5f5f6] rounded-[10px] mt-4 relative">
+        <div
+          className={`absolute top-0 left-0 h-2 bg-[#1dc072] rounded-[10px] ${progress}`}
+        ></div>
+      </div>
+    </div>
+  );
+};
+
+export default PaymentCard;
