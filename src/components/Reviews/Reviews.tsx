@@ -9,13 +9,14 @@ import bondingIcon from "@/assets/icons/bondingIcon.png";
 const Reviews = () => {
   return (
     <main className="flex flex-auto flex-col gap-10 items-center justify-center px-4 sm:px-8 lg:px-16">
-      <div className="relative w-full h-[500px] sm:h-[700px] lg:h-[836px] mt-20 sm:mt-32">
+      <div className="relative w-screen h-[500px] sm:h-[700px] lg:h-[836px] mt-20 sm:mt-32">
         <Image
           src={guestsImage}
           alt="Guests enjoying"
+          layout="fill"
           objectFit="cover"
           quality={100}
-          className="absolute w-full h-full"
+          className="absolute"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-end p-4 sm:p-8 lg:p-16">
           <div className="flex flex-col md:items-end gap-4 md:gap-6 lg:gap-8">

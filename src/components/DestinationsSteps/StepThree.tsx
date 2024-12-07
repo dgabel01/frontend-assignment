@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import PaymentCard from "../Payments/PaymentCard";
 import stepThreeImage from "@/assets/images/Guests png 1.png";
 import rightArrowIcon from "@/assets/icons/rightarrow.svg";
@@ -57,27 +58,29 @@ const StepThree = () => {
         ))}
       </div>
 
-      <div className="mt-16 relative w-full h-auto">
+      <div className="mt-16 relative w-screen left-1/2 right-1/2 -translate-x-1/2">
         <Image
           src={stepThreeImage}
           alt="Step 3 illustration"
           layout="responsive"
           width={1465}
           height={500}
-          className="rounded-md"
+          className="w-full h-auto"
         />
-        <div className="absolute top-1/2 right-8 transform -translate-y-1/2 flex flex-col items-start space-y-4 text-white max-w-[300px]">
-          <h2 className="text-[#062949] text-4xl font-semibold md:text-[30px] leading-[37.80px]">
+        <div className="absolute top-1/2 right-4 md:right-8 transform -translate-y-1/2 flex flex-col items-start space-y-4 text-white max-w-[90%] sm:max-w-[300px] p-4 bg-[#062949]/60 rounded-md md:bg-transparent">
+          <h2 className="text-white md:text-[#062949] text-xl sm:text-2xl md:text-4xl font-semibold leading-snug">
             Ready to go?
           </h2>
-          <p className="text-[#062949] text-lg font-normal font-['DM Sans'] leading-[25.20px]">
+          <p className="text-white md:text-[#062949] text-sm sm:text-base leading-normal">
             Lorem ipsum dolor sit amet consectetur. Tellus lectus non purus odio
             amet fermentum eu morbi id. Risus sed facilisis maecenas urna nunc.
           </p>
-          <button className="w-[264px] h-11 pl-[18px] pr-3 py-2 bg-white rounded-[50px] flex justify-between items-center gap-3 shadow-md hover:shadow-lg transition-all mt-[43px]">
-            <span className="text-[#062949] text-base font-medium font-['Poppins'] leading-normal">
-              Explore our destinations
-            </span>
+          <button className="w-full sm:w-[264px] h-11 pl-[18px] pr-3 py-2 bg-white rounded-[50px] flex justify-between items-center gap-3 shadow-md hover:shadow-lg transition-all">
+            <Link href={"/destinations"}>
+              <span className="text-[#062949] text-base font-medium font-['Poppins'] leading-normal">
+                Explore our destinations
+              </span>
+            </Link>
             <div className="w-[29px] h-[29px] bg-[#2962d0]/10 rounded-full flex justify-center items-center">
               <Image
                 src={rightArrowIcon}

@@ -19,7 +19,7 @@ const Accordion = () => {
                 name="my-accordion-2"
                 defaultChecked={index === 0}
               />
-              <div className="collapse-title text-lg md:text-xl font-medium">
+              <div className="collapse-title text-lg md:text-xl  text-[#062949] font-semibold font-['Poppins'] leading-none tracking-tight">
                 {route.title}
               </div>
               <div className="collapse-content">
