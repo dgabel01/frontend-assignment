@@ -64,7 +64,7 @@ const Experience = () => {
           { title: "Relax", img: relaxPhoto },
         ].map((card, index) => (
           <div
-            className="relative w-[270px] h-[370px] bg-[#909090] rounded-[10.44px] overflow-hidden"
+            className="relative w-[270px] h-[370px] bg-[#909090] rounded-[10.44px] overflow-hidden hover:scale-110 hover:mx-4"
             key={index}
           >
             <Image

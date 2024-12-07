@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 interface Slide {
   avatar: StaticImageData;
-  star:StaticImageData;
+  star: StaticImageData;
   stars: number;
   text: string;
   name: string;
@@ -23,11 +23,11 @@ export function Carousel({ slides }: CarouselProps) {
 
   return (
     <div className="w-full max-w-lg mx-auto">
-      <div className="relative overflow-hidden rounded-lg bg-white shadow-md h-[300px]">
+      <div className="relative overflow-hidden rounded-lg bg-white shadow-md h-[300px] sm:h-[350px]">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-transform duration-700 h-[337px] pl-[30px] pr-[76px] py-[42px] bg-white rounded-[10px] ${
+            className={`absolute inset-0 transition-transform duration-700 p-4 sm:h-[337px] sm:pl-[30px] sm:pr-[76px] sm:py-[42px] bg-white rounded-[10px] ${
               activeIndex === index
                 ? "translate-x-0 opacity-100"
                 : "translate-x-full opacity-0"
@@ -45,7 +45,7 @@ export function Carousel({ slides }: CarouselProps) {
                 height={80}
                 className="rounded-full"
               />
-              <span className="text-gray-800 text-lg font-semibold">
+              <span className="text-gray-800 text-lg sm:text-base font-semibold">
                 {slide.name}
               </span>
               <div className="flex gap-1">
@@ -59,7 +59,9 @@ export function Carousel({ slides }: CarouselProps) {
                   />
                 ))}
               </div>
-              <p className="text-left text-gray-700 mb-8">{slide.text}</p>
+              <p className="text-left text-gray-700 text-sm sm:text-base mb-8 line-clamp-3 sm:line-clamp-none">
+                {slide.text}
+              </p>
             </div>
           </div>
         ))}

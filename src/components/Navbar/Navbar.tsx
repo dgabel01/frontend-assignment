@@ -5,10 +5,11 @@ import Image, { StaticImageData } from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { routes } from "@/constants/routes";
 import { useRouter } from "next/navigation";
+import logoIcon from "@/assets/images/Charterag.png";
 
 interface NavbarProps {
-  logo: StaticImageData; 
-  linkColor: string; 
+  logo: StaticImageData;
+  linkColor: string;
 }
 
 export function Navbar({ logo, linkColor }: NavbarProps) {
@@ -72,12 +73,13 @@ export function Navbar({ logo, linkColor }: NavbarProps) {
         <button
           className="text-base font-bold hover:text-gray-300 transition-colors mr-[15px]"
           style={{ color: linkColor }}
-          onClick={()=>router.push("/log-in")}
+          onClick={() => router.push("/log-in")}
         >
           Log in
         </button>
-        <button className="bg-[#ffd50a] text-black text-base font-medium px-4 py-2 uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
-          onClick={()=>router.push("/book-now")}
+        <button
+          className="bg-[#ffd50a] text-black text-base font-medium px-4 py-2 uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
+          onClick={() => router.push("/book-now")}
         >
           Book now
         </button>
@@ -85,19 +87,38 @@ export function Navbar({ logo, linkColor }: NavbarProps) {
 
       {/* Mobile Navigation */}
       {openNav && (
-        <div className="absolute top-12 left-4 flex flex-col gap-4  p-4 rounded-md">
-          {navList}
-          <div className="flex flex-col items-start justify-start gap-4">
+        <div className="absolute top-0 left-0 w-full rounded-lg h-[550px] bg-gray-600 bg-opacity-75 flex flex-col items-start p-4 z-20">
+          {/* Logo */}
+          <Link href={"/"}>
+            <Image src={logoIcon} alt="logo" width={90} className="mb-6" />
+          </Link>
+
+          {/* Navigation Links */}
+          <div className="w-full">{navList}</div>
+
+          {/* Buttons */}
+          <div className="flex flex-col items-start gap-4 mt-6 w-full">
             <button
-              className="text-base font-medium hover:text-gray-300 transition-colors"
-              style={{ color: linkColor }}
+              className="text-base font-medium text-white hover:text-gray-300 transition-colors"
+              onClick={() => router.push("/log-in")}
             >
               Log in
             </button>
-            <button className="bg-[#ffd50a] text-black text-base font-medium px-4 py-2 uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all">
+            <button
+              className="bg-[#ffd50a] text-black text-base font-medium px-6 py-3  mt-[10px] uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
+              onClick={() => router.push("/book-now")}
+            >
               Book now
             </button>
           </div>
+
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300"
+            onClick={() => setOpenNav(false)}
+          >
+            <XMarkIcon className="h-8 w-8" />
+          </button>
         </div>
       )}
     </div>
