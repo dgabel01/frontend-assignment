@@ -1,32 +1,21 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import starIcon from "@/assets/icons/Feather Icon.svg";
-import avatarIcon from "@/assets/icons/Ellipse 2.png";
+import Image, { StaticImageData } from "next/image";
 
-export function Carousel() {
+interface Slide {
+  avatar: StaticImageData;
+  star:StaticImageData;
+  stars: number;
+  text: string;
+  name: string;
+}
+
+interface CarouselProps {
+  slides: Slide[];
+}
+
+export function Carousel({ slides }: CarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const slides = [
-    {
-      avatar: avatarIcon,
-      stars: 5,
-      text: "Amazing experience! Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      name: "Courtney Henry",
-    },
-    {
-      avatar: avatarIcon,
-      stars: 4,
-      text: "A wonderful getaway! Sapien eget morbi aliquam ultricies est ornare.",
-      name: "John Doe",
-    },
-    {
-      avatar: avatarIcon,
-      stars: 5,
-      text: "Loved every moment! Eu ac lorem eleifend diam tellus magnis volutpat nulla.",
-      name: "Jane Smith",
-    },
-  ];
 
   const handleSlideChange = (index: number) => {
     setActiveIndex(index);
@@ -38,7 +27,7 @@ export function Carousel() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-transform duration-700  h-[337px] pl-[30px] pr-[76px] py-[42px] bg-white rounded-[10px] ${
+            className={`absolute inset-0 transition-transform duration-700 h-[337px] pl-[30px] pr-[76px] py-[42px] bg-white rounded-[10px] ${
               activeIndex === index
                 ? "translate-x-0 opacity-100"
                 : "translate-x-full opacity-0"
@@ -63,14 +52,14 @@ export function Carousel() {
                 {[...Array(slide.stars)].map((_, starIndex) => (
                   <Image
                     key={starIndex}
-                    src={starIcon}
+                    src={slide.star}
                     alt="Star"
                     width={20}
                     height={20}
                   />
                 ))}
               </div>
-              <p className="text-left text-gray-700">{slide.text}</p>
+              <p className="text-left text-gray-700 mb-8">{slide.text}</p>
             </div>
           </div>
         ))}

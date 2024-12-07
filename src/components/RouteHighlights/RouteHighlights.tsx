@@ -3,7 +3,8 @@ import { RouteHighlightsInfo } from "@/constants/routeHighlightsInfo";
 
 const RouteHighlights = () => {
   return (
-    <div className="px-4 lg:px-8 py-8">
+    <div className="px-4 lg:px-8 py-8 mt-[183px]">
+      <h1 className="w-[482.23px] mx-auto mb-[69px] text-center text-black text-[32px] font-normal font-['Poppins'] leading-10">Route highlights</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {RouteHighlightsInfo.map((highlight, index) => (
           <div
@@ -17,7 +18,7 @@ const RouteHighlights = () => {
                 className="rounded-[10px] w-[400px] h-[270px] object-cover"
               />
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-[32px]">
               <h3 className="text-[#282828] text-2xl font-medium leading-loose">
                 {highlight.heading}
               </h3>

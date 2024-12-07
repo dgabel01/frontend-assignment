@@ -15,6 +15,9 @@ export default withMT({
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow:{
+        'custom-1': '16px 16px 32px 0px #5C6C7B1A',
+      }
     },
   },
   plugins: [
