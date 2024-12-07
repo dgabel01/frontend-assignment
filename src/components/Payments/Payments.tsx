@@ -168,7 +168,7 @@ const Payments = () => {
             className="rounded-[10px] shadow"
           />
         </div>
-        <div className="w-[464px] h-auto relative mx-auto mt-6 md:mt-0 md:absolute md:top-[550px] md:left-[50%] md:transform md:-translate-x-1/2 flex flex-col items-center gap-6 text-center z-20">
+        <div className="max-w-[464px] h-auto relative mx-auto mt-6 md:mt-0 md:absolute md:top-[550px] md:left-[50%] md:transform md:-translate-x-1/2 flex flex-col items-center gap-6 text-center z-20 mb-[111px]">
           <div className="text-[#062949] text-[32px] font-semibold leading-10">
             Check Charterag
             <br />
