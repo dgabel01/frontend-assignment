@@ -4,7 +4,7 @@ import { RouteHighlightsInfo } from "@/constants/routeHighlightsInfo";
 const RouteHighlights = () => {
   return (
     <div className="px-4 lg:px-8 py-8 mt-[183px]">
-      <h1 className="w-[482.23px] mx-auto mb-[69px] text-center text-black text-[32px] font-normal font-['Poppins'] leading-10">Route highlights</h1>
+      <h1 className="max-w-[482.23px] mx-auto mb-[69px] text-center text-black text-[32px] font-normal font-['Poppins'] leading-10">Route highlights</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {RouteHighlightsInfo.map((highlight, index) => (
           <div
