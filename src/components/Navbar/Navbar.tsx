@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { routes } from "@/constants/routes";
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
   logo: StaticImageData; 
@@ -11,6 +12,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ logo, linkColor }: NavbarProps) {
+  const router = useRouter();
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -70,10 +72,13 @@ export function Navbar({ logo, linkColor }: NavbarProps) {
         <button
           className="text-base font-bold hover:text-gray-300 transition-colors mr-[15px]"
           style={{ color: linkColor }}
+          onClick={()=>router.push("/log-in")}
         >
           Log in
         </button>
-        <button className="bg-[#ffd50a] text-black text-base font-medium px-4 py-2 uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all">
+        <button className="bg-[#ffd50a] text-black text-base font-medium px-4 py-2 uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
+          onClick={()=>router.push("/book-now")}
+        >
           Book now
         </button>
       </div>
