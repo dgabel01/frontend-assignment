@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,8 +10,11 @@ import centerImage from "@/assets/images/centerimage.png";
 import rightImage from "@/assets/images/rightimage.png";
 import instaIcon from "@/assets/icons/instagram.png";
 import PaymentCard from "./PaymentCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Payments = () => {
+  AOS.init();
   const features = [
     "experience",
     "lorem ipsum dolor",
@@ -58,7 +62,13 @@ const Payments = () => {
           </p>
         </div>
         <div className="flex flex-col lg:flex-row gap-8 justify-between mb-[239.29px]">
-          <div className="w-full lg:w-[434.8px] h-auto bg-[rgba(0,190,204,0.10)] shadow-md rounded-[15px] p-6">
+          <div
+            className="w-full lg:w-[434.8px] h-auto bg-[rgba(0,190,204,0.10)] shadow-md rounded-[15px] p-6"
+            data-aos="fade-right"
+            data-aos-offset="500"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
             <h2 className="text-[#062949] text-[24px] sm:text-[28px] lg:text-[32px] leading-[37px] font-medium mb-6">
               Sailweek <br /> experience
             </h2>
@@ -85,7 +95,13 @@ const Payments = () => {
               </span>
             </div>
           </div>
-          <div className="w-full lg:w-[434.8px] h-auto bg-white shadow-md rounded-[15px] p-6">
+          <div
+            className="w-full lg:w-[434.8px] h-auto bg-white shadow-md rounded-[15px] p-6"
+            data-aos="fade-left"
+            data-aos-offset="500"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
             <h2 className="text-[#062949] text-[24px] sm:text-[28px] lg:text-[32px] leading-[37px] font-medium mb-6">
               Individual experience
             </h2>

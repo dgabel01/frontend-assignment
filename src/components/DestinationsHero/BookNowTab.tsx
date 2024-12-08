@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import starIcon from "@/assets/icons/booknowstar.svg";
@@ -6,6 +7,8 @@ import peopleIcon from "@/assets/icons/peopleicon.svg";
 import ageIcon from "@/assets/icons/age.svg";
 import wifiIcon from "@/assets/icons/wifi.svg";
 import calendarIcon from "@/assets/icons/calendar.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const iconsData = [
   { icon: boatIcon, text: "Party vibe" },
@@ -16,8 +19,11 @@ const iconsData = [
 ];
 
 const BookNowTab = () => {
+  AOS.init();
+
   return (
-    <div className="max-w-[368px] max-h-[550.93px] shadow-custom-1 bg-white rounded-md">
+    <div className="max-w-[368px] max-h-[550.93px] shadow-custom-1 bg-white rounded-md" data-aos="fade-up"
+    data-aos-duration="3000">
       {/* Naslov i ocjena */}
       <div className="w-[288px] h-[68px] mt-[32px] mb-[40px] mx-[40px] flex flex-col">
         <p className="w-72 text-[#062949] text-2xl font-semibold font-['Poppins'] leading-loose">

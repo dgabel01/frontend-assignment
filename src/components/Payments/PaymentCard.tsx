@@ -1,5 +1,8 @@
+"use client"
 import Image from "next/image";
 import dollarIcon from "@/assets/icons/dollarIcon.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface PaymentCardProps {
   number: number;
@@ -16,9 +19,16 @@ const PaymentCard = ({
   progress,
   bgColor,
 }: PaymentCardProps) => {
+
+  AOS.init();
+
   return (
     <div
       className={`flex flex-col items-start p-4 ${bgColor} rounded-md shadow-md w-full max-w-[300px] mx-auto`}
+      data-aos="flip-left"
+      data-aos-easing="ease-in-out"
+      data-aos-offset="200"
+      data-aos-duration="1000"
     >
       <div className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#E8F9F1]">
         <Image

@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface SinglePartyProps {
   title: string;
@@ -16,8 +19,16 @@ const SingleParty = ({
   party,
   adventure,
 }: SinglePartyProps) => {
+  AOS.init();
+
   return (
-    <div className="w-full max-w-[1103px] h-[404px] sm:h-[450px] relative rounded-[15px] overflow-hidden">
+    <div
+      className="w-full max-w-[1103px] h-[404px] sm:h-[450px] relative rounded-[15px] overflow-hidden"
+      data-aos="zoom-in"
+      data-aos-easing="ease-in-out"
+      data-aos-offset="200"
+      data-aos-duration="1000"
+    >
       <Image
         src={img}
         alt={title}
