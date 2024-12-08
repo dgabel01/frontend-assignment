@@ -1,18 +1,11 @@
 "use client";
-import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { RouteHighlightsInfo } from "@/constants/routeHighlightsInfo";
 
 const RouteHighlights = () => {
-  useEffect(() => {
-    Aos.init({
-      duration: 800, // Animation duration (in ms)
-      easing: "ease-in-out", // Easing function for the animation
-      once: true, // Whether animation should only happen once
-    });
-  }, []);
+  Aos.init()
 
   return (
     <div className="px-4 lg:px-8 py-8 mt-[183px]">
@@ -24,8 +17,10 @@ const RouteHighlights = () => {
           <div
             key={index}
             className="h-auto flex flex-col items-start gap-4 bg-white p-4"
-            data-aos="fade-up" // Apply AOS animation
-            data-aos-delay={index * 100} // Stagger animations for cards
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-delay={index * 100} 
           >
             <div className="w-full h-[251px] relative">
               <Image
