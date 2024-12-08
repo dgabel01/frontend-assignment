@@ -1,4 +1,3 @@
-"use client"
 import DestinationsHero from "@/components/DestinationsHero/DestinationsHero";
 import StepOne from "@/components/DestinationsSteps/StepOne";
 import StepTwo from "@/components/DestinationsSteps/StepTwo";
