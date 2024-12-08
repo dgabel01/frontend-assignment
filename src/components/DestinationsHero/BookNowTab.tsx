@@ -1,4 +1,7 @@
-"use client"
+"use client";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import React from "react";
 import Image from "next/image";
 import starIcon from "@/assets/icons/booknowstar.svg";
@@ -7,8 +10,6 @@ import peopleIcon from "@/assets/icons/peopleicon.svg";
 import ageIcon from "@/assets/icons/age.svg";
 import wifiIcon from "@/assets/icons/wifi.svg";
 import calendarIcon from "@/assets/icons/calendar.svg";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const iconsData = [
   { icon: boatIcon, text: "Party vibe" },
@@ -19,8 +20,15 @@ const iconsData = [
 ];
 
 const BookNowTab = () => {
-  AOS.init();
 
+  useEffect(() => {
+    // Initialize AOS only on the client-side
+    Aos.init({
+      duration: 800, 
+      easing: "ease-in-out", 
+      once: true, 
+    });
+  }, []);
   return (
     <div className="max-w-[368px] max-h-[550.93px] shadow-custom-1 bg-white rounded-md" data-aos="fade-up"
     data-aos-duration="3000">

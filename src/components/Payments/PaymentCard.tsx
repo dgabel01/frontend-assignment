@@ -1,8 +1,10 @@
-"use client"
+"use client";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
 import dollarIcon from "@/assets/icons/dollarIcon.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 interface PaymentCardProps {
   number: number;
@@ -20,10 +22,17 @@ const PaymentCard = ({
   bgColor,
 }: PaymentCardProps) => {
 
-  AOS.init();
+  useEffect(() => {
+    // Initialize AOS only on the client-side
+    Aos.init({
+      duration: 800, 
+      easing: "ease-in-out", 
+      once: true, 
+    });
+  }, []);
 
   return (
-    <div
+   <div
       className={`flex flex-col items-start p-4 ${bgColor} rounded-md shadow-md w-full max-w-[300px] mx-auto`}
       data-aos="flip-left"
       data-aos-easing="ease-in-out"

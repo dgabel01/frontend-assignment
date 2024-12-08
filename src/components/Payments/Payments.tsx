@@ -1,4 +1,7 @@
 "use client";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,11 +13,18 @@ import centerImage from "@/assets/images/centerimage.png";
 import rightImage from "@/assets/images/rightimage.png";
 import instaIcon from "@/assets/icons/instagram.png";
 import PaymentCard from "./PaymentCard";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 const Payments = () => {
-  AOS.init();
+  useEffect(() => {
+    // Initialize AOS only on the client-side
+    Aos.init({
+      duration: 800, 
+      easing: "ease-in-out", 
+      once: true, 
+    });
+  }, []);
+
   const features = [
     "experience",
     "lorem ipsum dolor",

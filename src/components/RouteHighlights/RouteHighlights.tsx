@@ -1,7 +1,19 @@
+"use client";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
 import { RouteHighlightsInfo } from "@/constants/routeHighlightsInfo";
 
 const RouteHighlights = () => {
+  useEffect(() => {
+    // Initialize AOS only on the client-side
+    Aos.init({
+      duration: 1800, 
+      easing: "ease-in-out", 
+      once: true, 
+    });
+  }, []);
 
   return (
     <div className="px-4 lg:px-8 py-8 mt-[183px]">
@@ -12,7 +24,8 @@ const RouteHighlights = () => {
         {RouteHighlightsInfo.map((highlight, index) => (
           <div
             key={index}
-            className="h-auto flex flex-col items-start gap-4 bg-white p-4"
+            className="h-auto flex flex-col items-start gap-4 bg-white  p-4"
+            data-aos="zoom-in"
           >
             <div className="w-full h-[251px] relative">
               <Image
