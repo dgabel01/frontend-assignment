@@ -76,11 +76,11 @@ const Reviews = () => {
                   objectFit="contain"
                 />
               </div>
-              <h3 className="text-[#062949] text-[20px] font-medium leading-[24px] font-poppins">
+              <h3 className="text-[#062949] text-[20px] mb-[10px] font-medium leading-[24px] font-poppins">
                 {feature.title}
               </h3>
             </div>
-            <p className="text-[#062949] text-[16px] font-normal leading-[24px] font-poppins">
+            <p className="text-[#062949] text-[16px] font-normal leading-[24px] mb-[10px] font-poppins">
               {feature.description}
             </p>
           </div>

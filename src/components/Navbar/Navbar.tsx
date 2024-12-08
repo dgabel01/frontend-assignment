@@ -44,11 +44,11 @@ export function Navbar({ logo, linkColor }: NavbarProps) {
     <div className="absolute top-0 left-0 z-10 w-full flex items-center justify-between px-4 lg:px-8 mt-12">
       {/* Mobile Menu Button */}
       <button
-        className="text-white lg:hidden"
+        className="text-white lg:hidden "
         onClick={() => setOpenNav(!openNav)}
       >
         {openNav ? (
-          <XMarkIcon className="h-6 w-6" style={{ color: linkColor }} />
+          <XMarkIcon className="h-6 w-6 hidden" style={{ color: linkColor }} />
         ) : (
           <Bars3Icon className="h-6 w-6" style={{ color: linkColor }} />
         )}
@@ -88,15 +88,21 @@ export function Navbar({ logo, linkColor }: NavbarProps) {
       {/* Mobile Navigation */}
       {openNav && (
         <div className="absolute top-0 left-0 w-full rounded-lg h-[550px] bg-gray-600 bg-opacity-75 flex flex-col items-start p-4 z-20">
-          {/* Logo */}
           <Link href={"/"}>
-            <Image src={logoIcon} alt="logo" width={90} className="mb-6" />
+            <Image src={logoIcon} alt="logo" width={90} className="mb-6 mt-8" />
           </Link>
 
-          {/* Navigation Links */}
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300 z-50"
+            onClick={() => {
+              setOpenNav(false);
+            }}
+          >
+            <XMarkIcon className="h-8 w-8" />
+          </button>
+
           <div className="w-full">{navList}</div>
 
-          {/* Buttons */}
           <div className="flex flex-col items-start gap-4 mt-6 w-full">
             <button
               className="text-base font-medium text-white hover:text-gray-300 transition-colors"
@@ -105,20 +111,12 @@ export function Navbar({ logo, linkColor }: NavbarProps) {
               Log in
             </button>
             <button
-              className="bg-[#ffd50a] text-black text-base font-medium px-6 py-3  mt-[10px] uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
+              className="bg-[#ffd50a] text-black text-base font-medium px-6 py-3 mt-[10px] uppercase rounded-[50px] shadow-md hover:bg-yellow-400 transition-all"
               onClick={() => router.push("/book-now")}
             >
               Book now
             </button>
           </div>
-
-          {/* Close Button */}
-          <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300"
-            onClick={() => setOpenNav(false)}
-          >
-            <XMarkIcon className="h-8 w-8" />
-          </button>
         </div>
       )}
     </div>
