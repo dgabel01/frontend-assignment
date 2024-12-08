@@ -1,9 +1,12 @@
-"use client"
+"use client";
+import { useRef } from "react";
 import Image from "next/image";
 import { RouteHighlightsInfo } from "@/constants/routeHighlightsInfo";
 import useOnScreen from "@/hooks/useOnScreen";
 
 const RouteHighlights = () => {
+  const refs = useRef([]); // Store refs for all cards
+
   return (
     <div className="px-4 lg:px-8 py-8 mt-[183px]">
       <h1 className="max-w-[482.23px] mx-auto mb-[69px] text-center text-black text-[32px] font-normal font-['Poppins'] leading-10">
@@ -11,31 +14,35 @@ const RouteHighlights = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {RouteHighlightsInfo.map((highlight, index) => {
-          const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
-          const divRef = typeof ref === 'boolean' ? undefined : ref;
+          // Initialize ref for each card
+          if (!refs.current[index]) refs.current[index] = { current: null };
+
+          // Detect visibility
+          const isVisible = useOnScreen({ threshold: 0.1 }, refs.current[index]);
+
           return (
             <div
               key={index}
-              ref={divRef as React.LegacyRef<HTMLDivElement>}
+              ref={(el) => (refs.current[index].current = el)} // Attach ref to the card
               className={`h-auto flex flex-col items-start gap-4 bg-white p-4 card ${
-              isVisible ? "visible" : ""
+                isVisible ? "visible" : ""
               }`}
-              style={{ transitionDelay: `${index * 0.4}s` }} 
-              >
+              style={{ transitionDelay: `${index * 0.4}s` }} // Add delay for staggered animation
+            >
               <div className="w-full h-[251px] relative">
-              <Image
-                src={highlight.image}
-                alt={highlight.heading}
-                className="rounded-[10px] w-[400px] h-[270px] object-cover"
-              />
+                <Image
+                  src={highlight.image}
+                  alt={highlight.heading}
+                  className="rounded-[10px] w-[400px] h-[270px] object-cover"
+                />
               </div>
               <div className="flex flex-col gap-4 mt-[32px]">
-              <h3 className="text-[#282828] text-2xl font-medium leading-loose">
-                {highlight.heading}
-              </h3>
-              <p className="text-[#062949] text-[15px] font-normal leading-normal">
-                {highlight.description}
-              </p>
+                <h3 className="text-[#282828] text-2xl font-medium leading-loose">
+                  {highlight.heading}
+                </h3>
+                <p className="text-[#062949] text-[15px] font-normal leading-normal">
+                  {highlight.description}
+                </p>
               </div>
             </div>
           );

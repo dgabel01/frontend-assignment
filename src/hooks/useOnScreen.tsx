@@ -1,26 +1,23 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useEffect } from "react";
 
-const useOnScreen = (options: IntersectionObserverInit) => {
+const useOnScreen = (options, ref) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>();
 
   useEffect(() => {
+    if (!ref?.current) return; // Ensure the ref exists
+
     const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting);
+      setIsVisible(entry.isIntersecting); // Set visibility based on intersection
     }, options);
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(ref.current); // Start observing the ref
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.disconnect(); // Clean up when the component unmounts
     };
   }, [ref, options]);
 
-  return [ref, isVisible];
+  return isVisible; // Return visibility state
 };
 
 export default useOnScreen;
