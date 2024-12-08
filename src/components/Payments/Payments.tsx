@@ -14,14 +14,13 @@ import rightImage from "@/assets/images/rightimage.png";
 import instaIcon from "@/assets/icons/instagram.png";
 import PaymentCard from "./PaymentCard";
 
-
 const Payments = () => {
   useEffect(() => {
     // Initialize AOS only on the client-side
     Aos.init({
-      duration: 800, 
-      easing: "ease-in-out", 
-      once: true, 
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
     });
   }, []);
 
@@ -74,7 +73,7 @@ const Payments = () => {
         <div className="flex flex-col lg:flex-row gap-8 justify-between mb-[239.29px]">
           <div
             className="w-full lg:w-[434.8px] h-auto bg-[rgba(0,190,204,0.10)] shadow-md rounded-[15px] p-6"
-            data-aos="fade-right"
+            data-aos="zoom-in-up"
             data-aos-offset="500"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
@@ -107,7 +106,7 @@ const Payments = () => {
           </div>
           <div
             className="w-full lg:w-[434.8px] h-auto bg-white shadow-md rounded-[15px] p-6"
-            data-aos="fade-left"
+            data-aos="zoom-in-up"
             data-aos-offset="500"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
