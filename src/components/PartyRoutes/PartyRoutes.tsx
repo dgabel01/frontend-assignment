@@ -1,42 +1,9 @@
 import React from "react";
+import Link from "next/link";
 import SingleParty from "./SingleParty";
-import partyRoutePhoto from "@/assets/images/partyroute.png";
-import ultraRoutePhoto from "@/assets/images/ultraroute.png";
-import greeceRoutePhoto from "@/assets/images/greeceroute.png";
-import adventureRoutePhoto from "@/assets/images/adventureroute.png";
+import { PARTY_ROUTES } from "@/config/partyRoutes"; 
 
 const PartyRoutes = () => {
-  const partyRoutes = [
-    {
-      title: "Party Route",
-      price: "€750/person",
-      img: partyRoutePhoto,
-      party: 80,
-      adventure: 60,
-    },
-    {
-      title: "Ultra Route",
-      price: "€820/person",
-      img: ultraRoutePhoto,
-      party: 90,
-      adventure: 50,
-    },
-    {
-      title: "Greece Route",
-      price: "€710/person",
-      img: greeceRoutePhoto,
-      party: 70,
-      adventure: 85,
-    },
-    {
-      title: "Adventure Route",
-      price: "€890/person",
-      img: adventureRoutePhoto,
-      party: 60,
-      adventure: 90,
-    },
-  ];
-
   return (
     <main>
       <div className="w-full flex flex-col items-center justify-center py-16 bg-white">
@@ -61,15 +28,20 @@ const PartyRoutes = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-16 px-4 py-16 bg-white">
-        {partyRoutes.map((route, index) => (
-          <SingleParty
-            key={index}
-            title={route.title}
-            price={route.price}
-            img={route.img}
-            party={route.party}
-            adventure={route.adventure}
-          />
+        {PARTY_ROUTES.map((route) => (
+          <Link 
+            key={route.id} 
+            href={`/destinations/${route.id}`}
+            className="w-full max-w-4xl"
+          >
+            <SingleParty
+              title={route.title}
+              price={route.price}
+              img={route.img}
+              party={route.party}
+              adventure={route.adventure}
+            />
+          </Link>
         ))}
       </div>
     </main>
